@@ -211,7 +211,7 @@
 <body class="post-template tag-css tag-fouc tag-fods line-numbers">
 
     <div class="site-wrapper">
-        <span class="theme-toggle" href="#" title="Theme" data-theme="dark"><svg class="icon icon-bulb" version="1.1"
+        <!-- <span class="theme-toggle" href="#" title="Theme" data-theme="dark"><svg class="icon icon-bulb" version="1.1"
                 id="Layer_1" x="0px" y="0px" viewBox="0 0 24 24" xml:space="preserve">
                 <g class="center">
                     <circle class="toggle-inner" cx="12" cy="12" r="2"></circle>
@@ -220,7 +220,7 @@
 
                     <circle class="toggle-outer" cx="12" cy="12" r="5"></circle>
                 </g>
-            </svg></span>
+            </svg></span> -->
 
 
         <header class="site-header">
@@ -298,7 +298,7 @@
             <div class="site-footer-content inner">
                 <section class="copyright"><a href="https://switchover.net/">switchover.net</a> © 2020</section>
                 <nav class="site-footer-nav">
-                    <a href="https://cybercafe.dev/">cybercafe.dev</a>
+                    <a href="https://cybercafe.dev/">Back to article</a>
                     <a href="https://www.facebook.com/z00md" target="_blank" rel="noopener">Facebook</a>
                     <a href="https://twitter.com/z00md" target="_blank" rel="noopener">Twitter</a>
                 </nav>
@@ -347,36 +347,16 @@
 
     <script>
         $(document).ready(function () {
-            // FitVids - start
-            var $postContent = $(".post-full-content");
-            $postContent.fitVids();
-            // FitVids - end
 
-            // Replace nav with title on scroll - start
-            Casper.stickyNavTitle({
-                navSelector: '.site-nav-main',
-                titleSelector: '.post-full-title',
-                activeClass: 'nav-post-title-active',
-                progressSelector: '.progress'
-            });
-            // Replace nav with title on scroll - end
-
-            // Hover on avatar
-            var hoverTimeout;
-            $('.author-list-item').hover(function () {
-                var $this = $(this);
-
-                clearTimeout(hoverTimeout);
-
-                $('.author-card').removeClass('hovered');
-                $(this).children('.author-card').addClass('hovered');
-
-            }, function () {
-                var $this = $(this);
-
-                hoverTimeout = setTimeout(function () {
-                    $this.children('.author-card').removeClass('hovered');
-                }, 800);
+            $("#switch").on("click" , function(e){
+                if (navigator.vibrate) {
+                    navigator.vibrate(50);
+                }
+                if (e.target.checked) {
+                    $("body").addClass("lava");
+                } else {
+                    $("body").removeClass("lava");
+                }
             });
         });
     </script>
