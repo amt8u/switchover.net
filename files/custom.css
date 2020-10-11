@@ -6,8 +6,7 @@
 #switch {
   margin: auto;
   width: 8rem;
-  background-color: #000;
-  
+  background-color: #808080;
   height: 20rem;
   color: red;
   cursor: pointer;
@@ -29,14 +28,15 @@ input#switch:hover {
 
 input#switch::before {
   width: 85%;
-  content: "";
+  content: "Click";
   /* margin: auto; */
   text-align: center;
-  font-size: 10rem;
-  line-height: 16rem;
+  font-size: 2rem;
+  line-height: 8rem;
+  font-weight: bold;
   /* align-items: self-end; */
   height: 43%;
-  color: cornflowerblue;
+  color: #9c9c9c;
   background-color: #15191d;
   position: absolute;
   left: 7%;
@@ -50,8 +50,16 @@ input#switch:checked::before {
   top: 4%;
 }
 
+.site-main {
+  display: flex;
+}
+
+.site-main .inner {
+  align-self: center;
+}
+
 .lava .site-header{
-  display: none;
+  opacity: 0;
 }
 
 .lava .site-main{
